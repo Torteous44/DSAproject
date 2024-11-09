@@ -51,6 +51,30 @@ def waterPath(matrix, startingRow, startingCol):
     movement(startingRow, startingCol)
     return pathArray
 
+#Omar's Code (Better):
+from typing import List, Tuple
+
+def waterFlow(matrix: List[List[int]], start: Tuple[int, int]) -> List[Tuple[int]]:
+    ROW, COL = len(matrix), len(matrix[0])
+    visited = set()
+    flowDirection = []
+
+    def dfs(prevMatrix, rn, cn):
+        if (rn, cn) in rn < 0 or cn < 0 or visited or rn >= ROW or cn >= COL:
+            return
+
+        visited.add((rn, cn))
+        flowDirection.append((rn, cn))
+
+        dfs(matrix[rn][cn], rn + 1, cn)
+        dfs(matrix[rn][cn], rn-1, cn)
+        dfs(matrix[rn][cn], rn, cn + 1)
+        dfs(matrix[rn][cn], rn, cn - 1)
+
+    start_rn, start_cn = start
+    dfs(start_rn, start_cn, matrix[start_rn][start_cn])
+    return flowDirection
+
 
 
 

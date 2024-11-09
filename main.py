@@ -24,6 +24,21 @@ class Stack:
             self.top = self.top.next
             return number
 
+
+# Function to take a snapshot of the matrix and return a 2D list of heights
+def get_matrix_snapshot(matrix, rows, cols):
+    snapshot = [[0 for _ in range(cols)] for _ in range(rows)]
+
+    for i in range(rows):
+        for j in range(cols):
+            # Take the top value from the stack at position (i, j)
+            top_value = matrix[i][j].pop()  # Pop to get the current height (or None if empty)
+            if top_value is not None:
+                snapshot[i][j] = top_value  # Set the height value in the snapshot
+            matrix[i][j].push(top_value)  # Push the value back to keep the original stack intact
+
+    return snapshot
+
 #function that runs whenever you click something
 def mouse_fn(btn, row, col):
     temp = matrix[row][col].pop()
@@ -31,6 +46,14 @@ def mouse_fn(btn, row, col):
         b[row][col] = temp
     else:
         b[row][col] = 0
+
+    snapshot = get_matrix_snapshot(matrix, rows, cols)
+    path = waterPath(snapshot,row,col)
+
+    for p in path:
+        r,c = map(int, p.split(','))
+        b[r][c] = "w"
+
 
 
 

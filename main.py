@@ -1,5 +1,6 @@
 from game2dboard import Board
 import random
+from waterLogic import waterPath
 
 class Node:
     def __init__(self, value, next=None):

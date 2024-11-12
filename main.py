@@ -1,11 +1,26 @@
+import os
 import pygame
 from game2dboard import Board
 import random
 from waterLogic import waterPath
 
 pygame.init()
-click_sound = pygame.mixer.Sound('click_sound.wav')
-water_sound = pygame.mixer.Sound('water.wav')
+pygame.mixer.init()
+
+
+sounds_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.idea')
+
+
+click_sound = pygame.mixer.Sound(os.path.join(sounds_dir, 'click_sound.wav'))
+water_flow_sound = pygame.mixer.Sound(os.path.join(sounds_dir, 'water.wav'))
+
+
+def play_click_sound():
+    click_sound.play()
+
+# Function to play the water flow sound (level finished)
+def play_water_flow_sound():
+    water_flow_sound.play()
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -106,4 +121,4 @@ b.on_mouse_click = mouse_fn
 
 # Show the board
 b.show()
-pygame.quit()
+

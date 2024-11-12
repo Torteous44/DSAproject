@@ -4,7 +4,7 @@ from game2dboard import Board
 import random
 from waterLogic import waterPath
 
-sounds_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'inspectionProfiles')
+sounds_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.idea')
 
 # Load sound file paths
 click_sound_path = os.path.join(sounds_dir, 'click_sound.mp3')

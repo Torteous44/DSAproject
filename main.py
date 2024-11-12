@@ -1,7 +1,11 @@
+import pygame
 from game2dboard import Board
 import random
 from waterLogic import waterPath
 
+pygame.init()
+click_sound = pygame.mixer.Sound('click_sound.wav')
+water_sound = pygame.mixer.Sound('water.wav')
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -102,3 +106,4 @@ b.on_mouse_click = mouse_fn
 
 # Show the board
 b.show()
+pygame.quit()

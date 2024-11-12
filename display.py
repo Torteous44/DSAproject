@@ -23,7 +23,7 @@ b.on_mouse_click = None  # disable click for now until we define the game logic
 matrix = [[random.randint(1, maxHeight) for _ in range(cols)] for _ in range(rows)]
 
 # Function to update the board based on matrix values
-def update_board():
+def updateBoard():
     for i in range(rows):
         for j in range(cols):
             height = matrix[i][j]
@@ -37,7 +37,7 @@ def update_board():
                 b.cell_color[i][j] = empty_cell_color
 
 #Dijkstra’s 
-def find_optimal_path(start, target):
+def findOptimalPath(start, target):
     directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]  # Down, Up, Right, Left
     pq = []  # P - queue for cells, sorted by descending stack height
     visited = set()
@@ -74,7 +74,7 @@ def find_optimal_path(start, target):
     return optimal_path
 
 # function to visualize the water path on the board
-def show_water_path(path):
+def showWaterPath(path):
     for r, c in path:
         b[r][c] = "w"
         b.cell_color[r][c] = water_color

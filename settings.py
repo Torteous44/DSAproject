@@ -10,7 +10,6 @@ MAX_SCORE = 100           # Starting score
 PATH_LENGTH_PENALTY = 1   # Points deducted per extra step beyond optimal
 MODIFICATION_PENALTY = 3  # Points deducted per terrain modification
 
-# Define levels with terrain configurations and target scores
 levels = [
     # Level 1: Basic Level
     {
@@ -27,7 +26,7 @@ levels = [
         "optimal_path_length": 7  # Shortest possible path length
     },
 
-    # Level 2: Intermediate Level with More Obstacles
+    # Level 2:
     {
         "terrain": [
             [3, 3, -1, 1, 0],
@@ -39,10 +38,10 @@ levels = [
         "origin": (0, 0),
         "drain": (4, 4),
         "target_score": 50,       # Higher score requirement
-        "optimal_path_length": 9  # More steps required due to obstacles
+        "optimal_path_length": 9  
     },
 
-    # Level 3: Advanced Level with Tighter Constraints
+    # Level 3:
     {
         "terrain": [
             [3, -1, 3, -1, 2],
@@ -54,10 +53,10 @@ levels = [
         "origin": (0, 0),
         "drain": (4, 4),
         "target_score": 60,       # Higher score requirement
-        "optimal_path_length": 10 # Longest optimal path due to obstacles
+        "optimal_path_length": 10 
     },
 
-    # Level 4: Complex Level with High Heights and Many Obstacles
+    # Level 4: 
     {
         "terrain": [
             [4, -1, 4, -1, 3],
@@ -69,7 +68,7 @@ levels = [
         "origin": (0, 0),
         "drain": (4, 4),
         "target_score": 70,       # Highest score requirement
-        "optimal_path_length": 12 # Longest optimal path
+        "optimal_path_length": 12 
     }
 ]
 

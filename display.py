@@ -1,4 +1,4 @@
-# display.py
+
 import pygame
 from settings import cell_size, stack_colors, water_color, empty_cell_color, origin_color, drain_color, screen_width, screen_height
 
@@ -6,13 +6,14 @@ from settings import cell_size, stack_colors, water_color, empty_cell_color, ori
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Guide the Water")
 
-# Utility function to convert hex colors to RGB
+
 def hex_to_rgb(hex_color):
+    """utility function"""
     return tuple(int(hex_color[i:i+2], 16) for i in (1, 3, 5))
 
-# Draw the grid with terrain and color coding
+
 def draw_grid(matrix, origin, drain):
-    screen.fill(empty_cell_color)  # Background for the grid
+    screen.fill(empty_cell_color) 
 
     # Iterate through each cell in the matrix and draw it
     for i, row in enumerate(matrix):
@@ -59,4 +60,4 @@ def show_water_path(path):
         text_rect = text.get_rect(center=(c * cell_size + cell_size // 2, r * cell_size + cell_size // 2))
         screen.blit(text, text_rect)
         pygame.display.update()
-        pygame.time.delay(100)  # Delay for water flow animation
+        pygame.time.delay(125)  # Delay for water flow animation

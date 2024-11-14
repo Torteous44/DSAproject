@@ -1,8 +1,8 @@
-# simulation.py
+
 from typing import List, Tuple
 from display import show_water_path
 from collections import deque
-from terrain import get_matrix_snapshot  # Ensure this function returns a 2D list of heights
+from terrain import get_matrix_snapshot  
 
 
 
@@ -25,6 +25,7 @@ def water_path_dfs(matrix: List[List[int]], origin: Tuple[int, int], drain: Tupl
 
         # Stop if we reach the drain
         if (row, col) == drain:
+            print(path)
             return path
 
         # Explore neighbors

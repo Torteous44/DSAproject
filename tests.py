@@ -119,3 +119,56 @@ def handle_click(row, col, terrain, score_tracker: GameScore):
     # Update color after modification
     color = hex_to_rgb(stack_colors[min(stack.peek(), len(stack_colors) - 1)]) if stack.peek() > 0 else empty_cell_color
     terrain[row][col].color = color 
+
+#HINT SYSTEM: CURRENTLY IN DEVELOPMENT:
+from collections import deque
+
+def bfs_shortest_path(matrix, origin, drain):
+    """Find the shortest path from origin to drain using BFS."""
+    rows, cols = len(matrix), len(matrix[0])
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    queue = deque([(origin, [])])  # Store current position and path
+    visited = set()
+
+    while queue:
+        (row, col), path = queue.popleft()
+
+        if (row, col) in visited:
+            continue
+
+        visited.add((row, col))
+        new_path = path + [(row, col)]
+
+        if (row, col) == drain:
+            return new_path
+
+        for dr, dc in directions:
+            new_row, new_col = row + dr, col + dc
+            if 0 <= new_row < rows and 0 <= new_col < cols:
+                if (new_row, new_col) not in visited and matrix[new_row][new_col] != -1:  # Skip obstacles
+                    queue.append(((new_row, new_col), new_path))
+
+    return []  
+
+    #For gameplay.py:
+    def provide_hint(matrix, origin, drain, score_tracker):
+    """Provide a hint to the player by showing the next step in the shortest path."""
+    shortest_path = bfs_shortest_path(matrix, origin, drain)
+
+    if not shortest_path:
+        print("No valid path exists.")
+        return None  # No hint possible
+
+    # Deduct points for using the hint
+    score_tracker.deduct_hint_points()
+
+    # Return the next step in the shortest path (excluding the origin)
+    if len(shortest_path) > 1:
+        next_step = shortest_path[1]
+        print(f"Hint: The next step is {next_step}.")
+        return next_step
+    else:
+        print("You are already at the drain!")
+        return None
+
+

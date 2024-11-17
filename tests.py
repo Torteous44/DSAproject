@@ -150,7 +150,7 @@ def bfs_shortest_path(matrix, origin, drain):
 
     return []  
 
-    #For gameplay.py:
+#For gameplay.py:
     def provide_hint(matrix, origin, drain, score_tracker):
     """Provide a hint to the player by showing the next step in the shortest path."""
     shortest_path = bfs_shortest_path(matrix, origin, drain)
@@ -170,5 +170,30 @@ def bfs_shortest_path(matrix, origin, drain):
     else:
         print("You are already at the drain!")
         return None
+        
+#For display.py:
+def show_hint(terrain, hint_cell):
+    """Highlight the hint cell on the grid."""
+    row, col = hint_cell
+    hint_color = (255, 215, 0)  # Gold for the hint cell
+
+    pygame.draw.rect(
+        terrain.surface,
+        hint_color,
+        pygame.Rect(col * cell_size, row * cell_size, cell_size, cell_size),
+    )
+    pygame.display.update()
+
+#For score_manager.py:
+class GameScore:
+    def __init__(self):
+        self.score = 100  # Starting score
+
+    def deduct_hint_points(self):
+        """Deduct points for using a hint."""
+        deduction = 10  # Adjust as needed
+        self.score = max(0, self.score - deduction)
+        print(f"Hint used! {deduction} points deducted. Remaining score: {self.score}")
+
 
 

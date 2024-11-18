@@ -1,7 +1,7 @@
 # menu.py
 import pygame
-from settings import levels, screen_width, screen_height
-from score_manager import load_scores, reset_scores 
+from src.core.settings import levels, screen_width, screen_height
+from src.utils.score_manager import load_scores, reset_scores 
 
 pygame.init()
 

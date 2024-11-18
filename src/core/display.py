@@ -1,5 +1,6 @@
 import pygame
-from settings import cell_size, stack_colors, empty_cell_color, screen_width, screen_height
+from src.core.settings import cell_size, stack_colors, empty_cell_color, screen_width, screen_height, faucet_image_path, drain_image_path
+
 
 # init screen
 screen = pygame.display.set_mode((screen_width, screen_height))
@@ -94,12 +95,15 @@ def show_water_path(path, matrix):
         # Update the display for the current cell
         pygame.display.update()
         pygame.time.delay(150)  #  animation delay
+print("Faucet Image Path:", faucet_image_path)
+print("Drain Image Path:", drain_image_path)
+
 
 # faucet and drain images
-faucet_image = pygame.image.load("assets/faucet.png")
+faucet_image = pygame.image.load(faucet_image_path)
 faucet_image = pygame.transform.scale(faucet_image, (cell_size // 3, cell_size // 3))  
 
-drain_image = pygame.image.load("assets/drain.png")
+drain_image = pygame.image.load(drain_image_path)
 drain_image = pygame.transform.scale(drain_image, (cell_size // 3, cell_size // 3))  
 
 def draw_faucet_and_drain(origin, drain, matrix):

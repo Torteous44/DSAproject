@@ -1,5 +1,5 @@
 import pygame
-from settings import click_sound_path, water_flow_sound_path
+from src.core.settings import click_sound_path, water_flow_sound_path
 
 def play_click_sound():
     pygame.mixer.Sound(click_sound_path).play()

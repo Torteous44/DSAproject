@@ -1,8 +1,8 @@
 # terrain.py
 import pygame
-from settings import  maxHeight, stack_colors, empty_cell_color
-from score_manager import GameScore
-from display import hex_to_rgb
+from src.core.settings import  maxHeight, stack_colors, empty_cell_color
+from src.utils.score_manager import GameScore
+from src.core.display import hex_to_rgb
 
 class Node:
     def __init__(self, value, next=None):

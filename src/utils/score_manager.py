@@ -2,7 +2,7 @@
 
 import json
 import os
-from settings import levels
+from src.core.settings import levels
 
 
 SCORES_FILE = "scores.json"
@@ -39,7 +39,7 @@ class GameScore:
 
 import json
 import os
-from settings import levels
+from src.core.settings import levels
 
 # Path to the scores file
 SCORES_FILE = "scores.json"

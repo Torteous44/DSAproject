@@ -1,6 +1,7 @@
-from menu import intro_screen, menu
-from gameplay import play_level
-from settings import levels
+from src.core.menu import intro_screen, menu
+from src.core.gameplay import play_level
+
+
 
 def main():
     """Main function to control the game loop."""

@@ -1,11 +1,11 @@
 import pygame
-from settings import levels, cell_size, screen_width, screen_height
-from display import draw_grid
-from audio import play_click_sound, play_water_flow_sound
-from terrain import initialize_terrain, handle_click
-from simulation import run_simulation
-from score_manager import GameScore, save_score
-from end_of_level import end_of_level
+from src.core.settings import levels, cell_size, screen_width, screen_height
+from src.core.display import draw_grid
+from src.core.audio import play_click_sound, play_water_flow_sound
+from src.core.terrain import initialize_terrain, handle_click
+from src.core.simulation import run_simulation
+from src.utils.score_manager import GameScore, save_score
+from src.utils.end_of_level import end_of_level
 
 def play_level(level_index):
     """Play a specific level and return the final score."""

@@ -1,8 +1,8 @@
 
 from typing import List, Tuple
-from display import show_water_path
+from src.core.display import show_water_path
 from collections import deque
-from terrain import get_matrix_snapshot  
+from src.core.terrain import get_matrix_snapshot  
 
 
 

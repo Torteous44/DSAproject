@@ -1,11 +1,20 @@
-# settings.py
 import os
 
+# Adjust the BASE_DIR calculation
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-# Paths for sound files
-script_dir = os.path.dirname(os.path.abspath(__file__))
-click_sound_path = os.path.join(script_dir, 'sounds', 'click_sound.mp3')
-water_flow_sound_path = os.path.join(script_dir, 'sounds', 'water.mp3')
+# Paths for assets
+ASSETS_DIR = os.path.join(BASE_DIR, 'assets')
+IMAGE_DIR = os.path.join(ASSETS_DIR, 'images')
+SOUND_DIR = os.path.join(ASSETS_DIR, 'sounds')
+
+# Image paths
+faucet_image_path = os.path.join(IMAGE_DIR, 'faucet.png')
+drain_image_path = os.path.join(IMAGE_DIR, 'drain.png')
+
+# Sound paths
+click_sound_path = os.path.join(SOUND_DIR, 'click_sound.mp3')
+water_flow_sound_path = os.path.join(SOUND_DIR, 'water.mp3')
 
 
 levels = [

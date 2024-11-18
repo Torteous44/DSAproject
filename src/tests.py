@@ -46,8 +46,8 @@ def water_path_dfs(matrix: List[List[Stack]], origin: Tuple[int, int], drain: Tu
 
 # Adjusted terrain generation code to also include the obstacle:
 import pygame
-from settings import cell_size, maxHeight, stack_colors, empty_cell_color
-from score_manager import GameScore
+from src.core.settings import cell_size, maxHeight, stack_colors, empty_cell_color
+from src.score_manager import GameScore
 from display import hex_to_rgb
 
 class Node:

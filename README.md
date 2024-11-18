@@ -70,6 +70,5 @@ python main.py
 #### **Assets**
 - **`assets/faucet.png`**: Faucet icon.
 - **`assets/drain.png`**: Drain icon.
-- **`assets/water_texture.png`**: Water animation texture.
 - **`sounds/click_sound.mp3`**: Click effect for terrain changes.
 - **`sounds/water.mp3`**: Flow effect during water simulation.

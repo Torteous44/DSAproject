@@ -14,13 +14,6 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 
 ---
 
-### **Requirements**
-1. **Python 3.10+**
-2. **Pygame 2.6+**
-3. A system capable of running graphical applications.
-
----
-
 ### **Installation and Setup**
 
 #### **1. Clone the Repository**

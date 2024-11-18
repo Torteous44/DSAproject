@@ -44,7 +44,7 @@ def run_simulation(terrain, origin: Tuple[int, int], drain: Tuple[int, int], sco
     path = water_path_dfs(matrix, origin, drain)
 
     if path and path[-1] == drain:  # Check if path reaches the drain
-        show_water_path(path)  # Visualize the path
+        show_water_path(path, terrain)  # Visualize the path with terrain for dynamic height
         return len(path)  # Return the path length if successful
     else:
         print("Water did not reach the drain. Adjust the terrain and try again.")

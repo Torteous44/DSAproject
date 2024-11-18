@@ -14,11 +14,11 @@ levels = [
     # Level 1: Basic Level
     {
         "terrain": [
-            [3, 3, 2, 1, 0],
-            [3, -1, -1, 1, 0],
-            [4, 4, 2, 2, 0],
-            [5, -1, 3, -1, 1],
-            [5, 4, 3, 2, 1],
+            [5, 6, 2, 1, 0],
+            [6, 4, 6, 1, 0],
+            [4, 6, 2, 7, 0],
+            [5, 1, 3, 3, 1],
+            [5, 4, 3, 9, 0],
         ],
         "origin": (0, 0),
         "drain": (4, 4),
@@ -29,40 +29,40 @@ levels = [
     # Level 2:
     {
         "terrain": [
-            [3, 3, -1, 1, 0],
-            [3, -1, -1, 2, 0],
-            [5, 4, -1, 2, 1],
-            [6, -1, 4, -1, 1],
-            [5, 5, 4, 3, 1],
+            [5, 6, 1, 1, 0],
+            [4, 8, 1, 2, 0],
+            [3, 7, 1, 2, 1],
+            [4, 8, 5, 9, 1],
+            [4, 4, 2, 5, 1],
         ],
         "origin": (0, 0),
-        "drain": (4, 4),
-        "target_score": 50,       # Higher score requirement
+        "drain": (4, 3),
+        "target_score": 50,       
         "optimal_path_length": 9  
     },
 
     # Level 3:
     {
         "terrain": [
-            [3, -1, 3, -1, 2],
-            [4, 4, -1, 2, 1],
-            [5, -1, -1, -1, 1],
-            [6, 5, 4, -1, 1],
-            [6, -1, 3, 2, 0],
+            [3, 9, 9, 10, 2],
+            [4, 4, 7, 2, 5],
+            [5, 8, 1, 8, 3],
+            [6, 5, 4, 4, 1],
+            [6, 1, 3, 2, 0],
         ],
         "origin": (0, 0),
-        "drain": (4, 4),
-        "target_score": 60,       # Higher score requirement
+        "drain": (0, 4),
+        "target_score": 60,       
         "optimal_path_length": 10 
     },
 
     # Level 4: 
     {
         "terrain": [
-            [4, -1, 4, -1, 3],
-            [5, 6, -1, 4, -1],
-            [6, -1, -1, -1, 2],
-            [6, 5, -1, 5, 2],
+            [4, 10, 8, 1, 2],
+            [10, 6, 9, 1, 1],
+            [6, 10, 9, 1, 2],
+            [6, 8, 7, 7, 7],
             [6, 6, 5, 3, 1],
         ],
         "origin": (0, 0),
@@ -81,10 +81,20 @@ maxHeight = 10  # Maximum terrain height
 
 # Colors
 stack_colors = [
-    "#e0f7fa", "#b2ebf2", "#80deea", "#4dd0e1", "#26c6da",
-    "#00bcd4", "#00acc1", "#0097a7", "#00838f", "#006064"
+    "#F5DEB3",  # Wheat (very light brown)
+    "#DEB887",  # Burlywood
+    "#D2B48C",  # Tan
+    "#BC8F8F",  # Rosy Brown
+    "#F4A460",  # Sandy Brown
+    "#DAA520",  # Goldenrod
+    "#CD853F",  # Peru
+    "#D2691E",  # Chocolate
+    "#8B4513",  # Saddle Brown
+    "#A0522D",  # Sienna
 ]
-water_color = "#1976d2"
+
+
+
 empty_cell_color = (240, 228, 203)  # Bisque color in RGB
 
 # Origin and Drain Colors

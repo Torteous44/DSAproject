@@ -1,6 +1,6 @@
 # terrain.py
 import pygame
-from settings import cell_size, maxHeight, stack_colors, empty_cell_color
+from settings import  maxHeight, stack_colors, empty_cell_color
 from score_manager import GameScore
 from display import hex_to_rgb
 

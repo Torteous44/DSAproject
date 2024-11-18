@@ -105,8 +105,8 @@ drain_image = pygame.transform.scale(drain_image, (cell_size // 3, cell_size // 
 def draw_faucet_and_drain(origin, drain, matrix):
     """Draw the faucet and drain on the grid and outline the top block of their stacks."""
 
-    faucet_outline_color = (0, 0, 255)  #  blue for faucet
-    drain_outline_color = (255, 0, 0)  #  red for drain
+    faucet_outline_color = (20, 20, 255)  #  blue for faucet
+    drain_outline_color = (255, 20, 20)  #  red for drain
 
 
     # Get stack heights for the faucet and drain
@@ -127,7 +127,7 @@ def draw_faucet_and_drain(origin, drain, matrix):
             cell_size - 2 * faucet_offset,
             cell_size - 2 * faucet_offset,
         ),
-        2,  # thickness of outline
+        1,  # thickness of outline
     )
     pygame.draw.rect(
         screen,
@@ -138,7 +138,7 @@ def draw_faucet_and_drain(origin, drain, matrix):
             cell_size - 2 * drain_offset,
             cell_size - 2 * drain_offset,
         ),
-        2,  
+        1,  
     )
 
     # image placement to align with the center of the topmost block

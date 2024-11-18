@@ -3,7 +3,7 @@ import pygame
 from settings import levels, cell_size, screen_width, screen_height
 from display import draw_grid
 from audio import play_click_sound, play_water_flow_sound
-from terrain import initialize_terrain, handle_click, get_matrix_snapshot  # Import get_matrix_snapshot
+from terrain import initialize_terrain, handle_click
 from simulation import run_simulation
 from score_manager import GameScore
 

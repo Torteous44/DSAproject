@@ -1,7 +1,7 @@
 # menu.py
 import pygame
 from settings import levels, screen_width, screen_height
-from score_manager import load_scores, reset_scores # Function to retrieve scores
+from score_manager import load_scores, reset_scores 
 
 pygame.init()
 
@@ -9,12 +9,15 @@ pygame.init()
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Game Menu")
 
-# Fonts
+# Fonts 
 title_font = pygame.font.Font(None, 50)
 option_font = pygame.font.Font(None, 40)
 info_font = pygame.font.Font(None, 20)
 button_font = pygame.font.Font(None, 50)
 exit_font = pygame.font.Font(None, 15)
+
+
+# ___________INTRO SCREEN STUFF____________
 
 def draw_intro():
     """Draw the introductory screen."""
@@ -63,6 +66,9 @@ def intro_screen():
                 x, y = pygame.mouse.get_pos()
                 if play_button_rect.collidepoint(x, y):
                     return  # Transition to the main menu
+
+#____________MENU SCREEN STUFF_____________
+
 def draw_menu(selected_level=None):
     screen.fill((50, 50, 50))  # Background color for the menu
 

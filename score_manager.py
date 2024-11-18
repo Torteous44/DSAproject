@@ -3,12 +3,13 @@
 import json
 import os
 from settings import levels
-# Define the path to the scores file
+
+
 SCORES_FILE = "scores.json"
 
 class GameScore:
     def __init__(self, optimal_path_length):
-        self.score = 100  # Starting score, can be adjusted
+        self.score = 100  # starting score
         self.modifications = 0
         self.path_length = 0
         self.optimal_path_length = optimal_path_length
@@ -32,6 +33,7 @@ class GameScore:
     def final_score(self):
         """Return the final score, ensuring it doesn’t go below zero."""
         return max(self.score, 0)
+
 
 # Score Management Functions
 

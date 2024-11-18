@@ -1,10 +1,10 @@
 # main.py
 import pygame
 from menu import menu, intro_screen
-from gameplay import play_level  # play_level handles gameplay logic for a single level
+from gameplay import play_level  
 from score_manager import save_score
 
-# Initialize pygame and set up the screen
+
 pygame.init()
 
 def main():

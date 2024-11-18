@@ -1,23 +1,25 @@
 import pygame
-from settings import cell_size, stack_colors, empty_cell_color, origin_color, drain_color, screen_width, screen_height
+from settings import cell_size, stack_colors, empty_cell_color, screen_width, screen_height
 
-# Initialize the screen
+# init screen
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Guide the Water")
+
 
 def hex_to_rgb(hex_color):
     """Utility function to convert hex color to RGB"""
     return tuple(int(hex_color[i:i+2], 16) for i in (1, 3, 5))
 
+
 def darken_color(color, factor):
     """Adjusts a color's brightness by the given factor.
-
     factor > 1: Lighten the color.
     0 < factor < 1: Darken the color.
     """
     return tuple(
         min(255, max(0, int(c * factor))) for c in color
     )
+
 
 def draw_stack_3d(i, j, height, base_color):
     """Draw a single stack in pseudo-3D with lighter brown tones."""
@@ -35,32 +37,31 @@ def draw_stack_3d(i, j, height, base_color):
             (x + offset, y - offset, cell_size - 2 * offset, cell_size - 2 * offset),
         )
 
+
 def draw_grid(matrix, origin, drain, water_path=[]):
-    screen.fill((240, 240, 240))  # Fill background with a neutral color
+    screen.fill((240, 240, 240))  # neutral color (background)
 
     for i, row in enumerate(matrix):
         for j, stack in enumerate(row):
             height = stack.peek()
             if height > 0:
                 base_color = hex_to_rgb(stack_colors[min(height - 1, len(stack_colors) - 1)])
-                draw_stack_3d(i, j, height, base_color)  # Draw stacks
+                draw_stack_3d(i, j, height, base_color)  # drawing stacks
             else:
                 pygame.draw.rect(
                     screen, empty_cell_color, (j * cell_size, i * cell_size, cell_size, cell_size)
                 )
 
     # Draw faucet and drain
-    draw_faucet_and_drain(origin, drain, matrix)  # Pass the matrix argument here
+    draw_faucet_and_drain(origin, drain, matrix)  
 
-    # Draw Run button
+    # Run button
     pygame.draw.rect(screen, (50, 50, 50), (screen_width // 2 - 50, screen_height - 40, 100, 30))
     font = pygame.font.Font(None, 24)
     text = font.render("Run", True, (255, 255, 255))
     screen.blit(text, (screen_width // 2 - 22, screen_height - 33))
 
-    pygame.display.flip()  # Update the screen
-
-
+    pygame.display.flip()  
 
 
 def draw_water_layer(r, c, layer, base_height, color):
@@ -77,43 +78,42 @@ def draw_water_layer(r, c, layer, base_height, color):
         ),
     )
 
+
 def show_water_path(path, matrix):
     """Animate water flowing dynamically over terrain in pseudo-3D."""
-    water_base_color = (28, 107, 160)  # Base water color (a nice blue)
+    water_base_color = (28, 107, 160)  # Base water color 
 
     for r, c in path:
-        stack_height = matrix[r][c].peek()  # Get the current height of the terrain
+        stack_height = matrix[r][c].peek()  # current height of the terrain
         for layer in range(3):  # Render 3 layers for the water
             water_color = tuple(
                 max(0, min(255, int(water_base_color[i] * (1 - layer * 0.1)))) for i in range(3)
-            )  # Slightly darken each layer
+            )  # Slightly darken each layer (reduces brightness of RGB values by 10%)
             draw_water_layer(r, c, layer, stack_height, water_color)
 
         # Update the display for the current cell
         pygame.display.update()
-        pygame.time.delay(150)  # Delay for animation
+        pygame.time.delay(150)  #  animation delay
 
-
-
-# Load faucet and drain images
+# faucet and drain images
 faucet_image = pygame.image.load("assets/faucet.png")
-faucet_image = pygame.transform.scale(faucet_image, (cell_size // 3, cell_size // 3))  # Scale to one-third of the grid cell
+faucet_image = pygame.transform.scale(faucet_image, (cell_size // 3, cell_size // 3))  
 
 drain_image = pygame.image.load("assets/drain.png")
-drain_image = pygame.transform.scale(drain_image, (cell_size // 3, cell_size // 3))  # Scale to one-third of the grid cell
+drain_image = pygame.transform.scale(drain_image, (cell_size // 3, cell_size // 3))  
 
 def draw_faucet_and_drain(origin, drain, matrix):
     """Draw the faucet and drain on the grid and outline the top block of their stacks."""
-    # Outline colors
-    faucet_outline_color = (0, 0, 255)  # Bright blue for faucet
-    drain_outline_color = (255, 0, 0)  # Bright red for drain
+
+    faucet_outline_color = (0, 0, 255)  #  blue for faucet
+    drain_outline_color = (255, 0, 0)  #  red for drain
 
 
     # Get stack heights for the faucet and drain
     faucet_height = matrix[origin[0]][origin[1]].peek()
     drain_height = matrix[drain[0]][drain[1]].peek()
 
-    # Calculate pseudo-3D offsets
+    #  pseudo-3D offsets calc
     faucet_offset = faucet_height * 4
     drain_offset = drain_height * 4
 
@@ -127,7 +127,7 @@ def draw_faucet_and_drain(origin, drain, matrix):
             cell_size - 2 * faucet_offset,
             cell_size - 2 * faucet_offset,
         ),
-        2,  # Outline thickness
+        2,  # thickness of outline
     )
     pygame.draw.rect(
         screen,
@@ -138,10 +138,10 @@ def draw_faucet_and_drain(origin, drain, matrix):
             cell_size - 2 * drain_offset,
             cell_size - 2 * drain_offset,
         ),
-        2,  # Outline thickness
+        2,  
     )
 
-    # Calculate image placement to align with the center of the topmost block
+    # image placement to align with the center of the topmost block
     faucet_x = origin[1] * cell_size + (cell_size // 2) - (faucet_image.get_width() // 2)
     faucet_y = origin[0] * cell_size - faucet_offset + (cell_size // 2) - (faucet_image.get_height() // 2)
 

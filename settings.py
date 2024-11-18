@@ -1,17 +1,15 @@
 # settings.py
 import os
+
+
 # Paths for sound files
 script_dir = os.path.dirname(os.path.abspath(__file__))
 click_sound_path = os.path.join(script_dir, 'sounds', 'click_sound.mp3')
 water_flow_sound_path = os.path.join(script_dir, 'sounds', 'water.mp3')
 
-# Scoring constants
-MAX_SCORE = 100           # Starting score
-PATH_LENGTH_PENALTY = 1   # Points deducted per extra step beyond optimal
-MODIFICATION_PENALTY = 3  # Points deducted per terrain modification
 
 levels = [
-    # Level 1: Basic Level
+    # Level 1
     {
         "terrain": [
             [5, 6, 2, 1, 0],
@@ -22,11 +20,12 @@ levels = [
         ],
         "origin": (0, 0),
         "drain": (4, 4),
-        "target_score": 40,       # Minimum score to complete the level
-        "optimal_path_length": 7  # Shortest possible path length
+        "target_score": 40,       
+        "optimal_path_length": 7  
+        
     },
 
-    # Level 2:
+    # Level 2
     {
         "terrain": [
             [5, 6, 1, 1, 0],
@@ -41,7 +40,7 @@ levels = [
         "optimal_path_length": 9  
     },
 
-    # Level 3:
+    # Level 3
     {
         "terrain": [
             [3, 9, 9, 10, 2],
@@ -56,7 +55,7 @@ levels = [
         "optimal_path_length": 10 
     },
 
-    # Level 4: 
+    # Level 4
     {
         "terrain": [
             [4, 10, 8, 1, 2],
@@ -67,36 +66,32 @@ levels = [
         ],
         "origin": (0, 0),
         "drain": (4, 4),
-        "target_score": 70,       # Highest score requirement
+        "target_score": 70,       
         "optimal_path_length": 12 
     }
 ]
 
 # Screen settings
-screen_width, screen_height = 600, 650  # Extra height for the Run button
+screen_width, screen_height = 600, 650 
 
 # Cell settings
 cell_size = 120
 maxHeight = 10  # Maximum terrain height
 
-# Colors
+# Colors (ligher to darker/ lower to higher)
 stack_colors = [
-    "#F5DEB3",  # Wheat (very light brown)
-    "#DEB887",  # Burlywood
-    "#D2B48C",  # Tan
-    "#BC8F8F",  # Rosy Brown
-    "#F4A460",  # Sandy Brown
-    "#DAA520",  # Goldenrod
-    "#CD853F",  # Peru
-    "#D2691E",  # Chocolate
-    "#8B4513",  # Saddle Brown
-    "#A0522D",  # Sienna
+    "#F5DEB3",  
+    "#DEB887",  
+    "#D2B48C",  
+    "#BC8F8F",  
+    "#F4A460",  
+    "#DAA520",  
+    "#CD853F",  
+    "#D2691E", 
+    "#8B4513",  
+    "#A0522D",  
 ]
 
 
+empty_cell_color = (240, 228, 203) 
 
-empty_cell_color = (240, 228, 203)  # Bisque color in RGB
-
-# Origin and Drain Colors
-origin_color = (0, 255, 0)  # Green for the origin
-drain_color = (255, 0, 0)   # Red for the drain

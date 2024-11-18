@@ -15,15 +15,15 @@ def play_level(level_index):
     origin, drain = level_data["origin"], level_data["drain"]
     optimal_path_length = level_data["optimal_path_length"]  # Get the optimal path length for the level
 
-    # Initialize the score tracker with the optimal path length
+    # score tracker with the optimal path length
     score_tracker = GameScore(optimal_path_length)
     running = True
 
-    # Define the Run button area
+    #  Run button area
     run_button_rect = pygame.Rect(screen_width // 2 - 50, screen_height - 40, 100, 30)
 
     while running:
-        # Render the grid with terrain, obstacles, origin, and drain
+        # render grid
         draw_grid(terrain, origin, drain)
 
         for event in pygame.event.get():
@@ -34,7 +34,7 @@ def play_level(level_index):
 
                 # Check if the Run button is clicked
                 if run_button_rect.collidepoint(x, y):
-                    play_water_flow_sound()  # Play sound for water flow
+                    play_water_flow_sound()  
                     path_length = run_simulation(terrain, origin, drain, score_tracker)
                     
                     if path_length is not None:
@@ -51,8 +51,8 @@ def play_level(level_index):
                     row, col = y // cell_size, x // cell_size
                     if 0 <= row < len(terrain) and 0 <= col < len(terrain[0]):
                         handle_click(row, col, terrain, score_tracker)  # Adjust terrain and update score
-                        play_click_sound()  # Play click sound for terrain modification
+                        play_click_sound() 
 
-        pygame.display.flip()  # Update the display
+        pygame.display.flip()  
 
-    return 0  # Return zero if the game was exited
+    return 0  # if game was exited

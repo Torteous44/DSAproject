@@ -1,6 +1,6 @@
 ### **WaterRouter: README**
 
-Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide water from a faucet to a drain while optimizing terrain for maximum points. This README will guide you through downloading and running the game.
+Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide water from a faucet to a drain while optimizing terrain for maximum points. 
 
 ---
 

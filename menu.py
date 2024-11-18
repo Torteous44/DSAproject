@@ -84,7 +84,13 @@ def draw_menu(selected_level=None):
 
     for i, level in enumerate(levels):
         level_text = f"Level {i + 1} - Target Score: {level['target_score']}"
-        score_text = f"Best Score: {scores.get(str(i), 'Not Played')}"
+        top_score = scores.get(str(i), [])
+        if isinstance(top_score, list) and top_score:  # Ensure it's a non-empty list
+            top_score_display = top_score[0]  # The top score is the first element in the sorted list
+        else:
+            top_score_display = "Not Played"  # Default if no scores exist
+
+        score_text = f"Best Score: {top_score_display}"
         color = (255, 255, 255) if selected_level == i else (180, 180, 180)
 
         # Render level option
@@ -97,10 +103,9 @@ def draw_menu(selected_level=None):
         score_rect = score_surface.get_rect(center=(screen_width // 2, y_offset + 30))
         screen.blit(score_surface, score_rect)
 
-        # Add the level_rect to the list for click detection
         level_rects.append(level_rect)
+        y_offset += 80
 
-        y_offset += 80  # Vertical spacing between levels
 
     # Reset Scores button
     reset_button_rect = pygame.Rect(20, screen_height - 50, 100, 30)  # Smaller button in bottom-left corner

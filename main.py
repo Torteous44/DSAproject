@@ -1,29 +1,26 @@
-# main.py
-import pygame
-from menu import menu, intro_screen
-from gameplay import play_level  
-from score_manager import save_score
-
-
-pygame.init()
+from menu import intro_screen, menu
+from gameplay import play_level
+from settings import levels
 
 def main():
-    """Main game loop for level selection and gameplay."""
+    """Main function to control the game loop."""
+    intro_screen()  # Display the intro screen
 
-    intro_screen()
     while True:
-        
-        selected_level = menu()
+        selected_level = menu()  # Display the level selection menu
         if selected_level is None:
-            break  
+            break  # Exit if the player quits from the menu
 
-        # Play the selected level and get the score at the end
-        final_score = play_level(selected_level)
+        while True:
+            print(f"Starting Level {selected_level + 1}...")
+            result = play_level(selected_level)  # Play the selected level
 
-        # Save the score if it’s a new high score for the level
-        save_score(selected_level, final_score)
+            if result == "retry":
+                continue  # Retry the same level
+            elif result == "menu":
+                break  # Return to the menu
 
-    pygame.quit()
+    print("Thanks for playing!")  # Exit message
 
 
 if __name__ == "__main__":

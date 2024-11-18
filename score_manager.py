@@ -2,7 +2,7 @@
 
 import json
 import os
-
+from settings import levels
 # Define the path to the scores file
 SCORES_FILE = "scores.json"
 
@@ -45,7 +45,14 @@ def load_scores():
 def save_score(level_index, score):
     """Save the best score for a specific level if it exceeds the existing best score."""
     scores = load_scores()  # Load current scores
-    best_score = scores.get(str(level_index), 0)  # Ensure level index is a string key
+    best_score = scores.get(str(level_index), 0)  # Default to 0 if no score exists
+
+    # Ensure best_score is a valid integer or default to 0
+    try:
+        best_score = int(best_score)
+    except ValueError:
+        best_score = 0
+
     if score > best_score:
         scores[str(level_index)] = score  # Save as string for JSON compatibility
         with open(SCORES_FILE, "w") as file:
@@ -54,3 +61,9 @@ def save_score(level_index, score):
     else:
         print(f"Score for Level {level_index + 1} not high enough to overwrite existing best: {best_score}")
 
+def reset_scores():
+    """Reset all scores to the original state."""
+    initial_scores = {str(i): "Not Played" for i in range(len(levels))}
+    with open(SCORES_FILE, "w") as file:
+        json.dump(initial_scores, file)
+    print("All scores have been reset to their original state.")

@@ -56,7 +56,7 @@ def draw_grid(matrix, origin, drain, water_path=[]):
     pygame.draw.rect(screen, (50, 50, 50), (screen_width // 2 - 50, screen_height - 40, 100, 30))
     font = pygame.font.Font(None, 24)
     text = font.render("Run", True, (255, 255, 255))
-    screen.blit(text, (screen_width // 2 - 25, screen_height - 35))
+    screen.blit(text, (screen_width // 2 - 22, screen_height - 33))
 
     pygame.display.flip()  # Update the screen
 

@@ -1,6 +1,6 @@
 # main.py
 import pygame
-from menu import menu
+from menu import menu, intro_screen
 from gameplay import play_level  # play_level handles gameplay logic for a single level
 from score_manager import save_score
 
@@ -9,8 +9,10 @@ pygame.init()
 
 def main():
     """Main game loop for level selection and gameplay."""
+
+    intro_screen()
     while True:
-        # Show the menu and get the selected level index
+        
         selected_level = menu()
         if selected_level is None:
             break  

@@ -60,6 +60,12 @@ def draw_grid(matrix, origin, drain, water_path=[]):
     font = pygame.font.Font(None, 24)
     text = font.render("Run", True, (255, 255, 255))
     screen.blit(text, (screen_width // 2 - 22, screen_height - 33))
+    
+
+    instructions_font = pygame.font.Font(None, 14)
+    instructions_text = "Left-click: Add block | Right-click: Remove block"
+    instruction_surface = instructions_font.render(instructions_text, True, (0, 0, 0))
+    screen.blit(instruction_surface, (8, screen_height - 30))  # bottom left
 
     pygame.display.flip()  
 

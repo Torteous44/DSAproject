@@ -1,6 +1,6 @@
 import os
 
-# Adjust the BASE_DIR calculation
+# gets the base directory. it by default goes into core/ so we take two steps back into dsaproject/
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 # Paths for assets

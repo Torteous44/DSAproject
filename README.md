@@ -10,7 +10,7 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 3. Multiple levels of increasing difficulty.
 4. Scoring system based on path length and terrain modifications.
 5. Persistent high scores with a reset option.
-6. Intro screen, instructions, and a visually appealing menu.
+6. Intro screen, instructions, and menu.
 
 ---
 
@@ -53,22 +53,3 @@ python main.py
 - **Run Button:** Simulate water flow.
 - Press **Esc** to return to the menu.
 
----
-
-### **Project Structure**
-
-#### **Core Scripts**
-- **`main.py`**: Entry point; manages intro, menu, and gameplay flow.
-- **`menu.py`**: Handles the intro screen and level selection menu.
-- **`gameplay.py`**: Manages level-specific gameplay.
-- **`settings.py`**: Stores configurations like terrain, levels, and visual settings.
-- **`terrain.py`**: Implements the stack-based terrain system.
-- **`simulation.py`**: Simulates water flow using Depth-First Search.
-- **`display.py`**: Renders the grid, terrain, and water animations.
-- **`score_manager.py`**: Handles scoring, saving, and resetting scores.
-
-#### **Assets**
-- **`assets/faucet.png`**: Faucet icon.
-- **`assets/drain.png`**: Drain icon.
-- **`sounds/click_sound.mp3`**: Click effect for terrain changes.
-- **`sounds/water.mp3`**: Flow effect during water simulation.

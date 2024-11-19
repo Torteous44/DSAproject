@@ -50,20 +50,20 @@ def handle_click(row, col, terrain, score_tracker: GameScore):
     stack = terrain[row][col]
     top_value = stack.peek()
 
-    # Detect left and right mouse clicks
+    # detect clicks
     mouse_buttons = pygame.mouse.get_pressed()
 
     if mouse_buttons[0]:  # Left click: Increase height
         if top_value < maxHeight:
             stack.push(top_value + 1)
-            score_tracker.add_modification()  # Deduct points for modifying terrain
+            score_tracker.add_modification()  # deduct points for modifying terrain
             print(f"Increased height at ({row}, {col}) to {top_value + 1}")
     elif mouse_buttons[2]:  # Right click: Decrease height
         if top_value > 0:
             stack.pop()
-            score_tracker.add_modification()  # Deduct points for modifying terrain
+            score_tracker.add_modification()  # deduct points for modifying terrain
             print(f"Decreased height at ({row}, {col}) to {stack.peek()}")
 
-    # Update color after modification
+    # update color
     color = hex_to_rgb(stack_colors[min(stack.peek(), len(stack_colors) - 1)]) if stack.peek() > 0 else empty_cell_color
-    terrain[row][col].color = color  # Assuming color management is handled here
+    terrain[row][col].color = color  

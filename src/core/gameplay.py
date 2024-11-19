@@ -13,17 +13,17 @@ def play_level(level_index):
     terrain = initialize_terrain(level_data["terrain"])
     target_score = level_data["target_score"]
     origin, drain = level_data["origin"], level_data["drain"]
-    optimal_path_length = level_data["optimal_path_length"]  # Get the optimal path length for the level
+    optimal_path_length = level_data["optimal_path_length"]  
 
-    # Initialize the score tracker with the optimal path length
+    # init score tracker w/ optimal path length
     score_tracker = GameScore(optimal_path_length)
     running = True
 
-    # Define the Run button area
+    #define run button area
     run_button_rect = pygame.Rect(screen_width // 2 - 50, screen_height - 40, 100, 30)
 
     while running:
-        # Render the grid with terrain, obstacles, origin, and drain
+        # render grid
         draw_grid(terrain, origin, drain)
 
         for event in pygame.event.get():
@@ -39,26 +39,26 @@ def play_level(level_index):
                     path_length = run_simulation(terrain, origin, drain, score_tracker)
 
                     if path_length is not None:
-                        score_tracker.set_path_length(path_length)  # Set path length only if valid
+                        score_tracker.set_path_length(path_length)  # set path length only if valid
                         final_score = score_tracker.final_score()
-                        save_score(level_index, final_score)  # Save the score for the level
+                        save_score(level_index, final_score)  # save the score for the level
 
                         if final_score >= target_score:
                             print("Level Completed!")
-                            choice = end_of_level(level_index, final_score)  # Display end-of-level screen
+                            choice = end_of_level(level_index, final_score)  # display end-of-level screen
                             if choice == "retry":
-                                return "retry"  # Signal to retry the level
+                                return "retry"  
                             elif choice == "menu":
-                                return "menu"  # Signal to return to the menu
+                                return "menu"  
                     else:
                         print("Path did not reach drain, try again.")
 
-                elif y < screen_height - 50:  # Ensure click is within grid area
+                elif y < screen_height - 50:  # click within grid area
                     row, col = y // cell_size, x // cell_size
                     if 0 <= row < len(terrain) and 0 <= col < len(terrain[0]):
-                        handle_click(row, col, terrain, score_tracker)  # Adjust terrain and update score
-                        play_click_sound()  # Play click sound for terrain modification
+                        handle_click(row, col, terrain, score_tracker)  # adjust terrain, score track
+                        play_click_sound()  
 
-        pygame.display.flip()  # Update the display
+        pygame.display.flip()  
 
-    return "menu"  # Return to menu if exited
+    return "menu"  

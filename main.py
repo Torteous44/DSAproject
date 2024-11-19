@@ -5,23 +5,25 @@ from src.core.gameplay import play_level
 
 def main():
     """Main function to control the game loop."""
-    intro_screen()  # Display the intro screen
+    intro_screen()  
 
     while True:
-        selected_level = menu()  # Display the level selection menu
+        selected_level = menu()  # level selection menu
         if selected_level is None:
-            break  # Exit if the player quits from the menu
+            break  # exit 
 
         while True:
+            
             print(f"Starting Level {selected_level + 1}...")
-            result = play_level(selected_level)  # Play the selected level
+
+            result = play_level(selected_level)  
 
             if result == "retry":
-                continue  # Retry the same level
+                continue 
             elif result == "menu":
-                break  # Return to the menu
+                break  
 
-    print("Thanks for playing!")  # Exit message
+    print("Thanks for playing!") 
 
 
 if __name__ == "__main__":

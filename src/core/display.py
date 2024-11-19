@@ -1,7 +1,6 @@
 import pygame
 from src.core.settings import cell_size, stack_colors, empty_cell_color, screen_width, screen_height, faucet_image_path, drain_image_path
 
-
 # init screen
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Guide the Water")
@@ -28,9 +27,9 @@ def draw_stack_3d(i, j, height, base_color):
     y = i * cell_size
 
     for h in range(height):
-        offset = h * 4  # Adjust for the height effect
-        # Use a smaller decrement to keep colors lighter
-        factor = max(0.8, 1 - h * 0.05)  # Ensure factor doesn't go below 0.8
+        offset = h * 4  # height effect
+
+        factor = max(0.8, 1 - h * 0.05)  # makes sure factor doesn't go below 0.8
         layer_color = darken_color(base_color, factor)
         pygame.draw.rect(
             screen,
@@ -95,9 +94,6 @@ def show_water_path(path, matrix):
         # Update the display for the current cell
         pygame.display.update()
         pygame.time.delay(150)  #  animation delay
-print("Faucet Image Path:", faucet_image_path)
-print("Drain Image Path:", drain_image_path)
-
 
 # faucet and drain images
 faucet_image = pygame.image.load(faucet_image_path)

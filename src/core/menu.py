@@ -1,21 +1,20 @@
 # menu.py
+
 import pygame
 from src.core.settings import levels, screen_width, screen_height
 from src.utils.score_manager import load_scores, reset_scores 
 
 pygame.init()
-
-# Screen setup for the menu
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Game Menu")
 
-# Fonts 
+
+# fonts
 title_font = pygame.font.Font(None, 50)
 option_font = pygame.font.Font(None, 40)
 info_font = pygame.font.Font(None, 20)
 button_font = pygame.font.Font(None, 50)
 exit_font = pygame.font.Font(None, 15)
-
 
 # ___________INTRO SCREEN STUFF____________
 
@@ -49,14 +48,14 @@ def draw_intro():
     play_text_rect = play_text.get_rect(center=play_button_rect.center)
     screen.blit(play_text, play_text_rect)
 
-    pygame.display.flip()  # Update the display
+    pygame.display.flip()  
     return play_button_rect
 
 def intro_screen():
     """Handle the intro screen loop."""
     running = True
     while running:
-        play_button_rect = draw_intro()  # Draw the intro screen
+        play_button_rect = draw_intro()  
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -70,7 +69,7 @@ def intro_screen():
 #____________MENU SCREEN STUFF_____________
 
 def draw_menu(selected_level=None):
-    screen.fill((50, 50, 50))  # Background color for the menu
+    screen.fill((50, 50, 50))  # background color 
 
     # Title
     title_text = title_font.render("Select Level", True, (255, 255, 255))
@@ -78,17 +77,17 @@ def draw_menu(selected_level=None):
     screen.blit(title_text, title_rect)
 
     # Level options
-    scores = load_scores()  # Load existing scores if available
+    scores = load_scores()  
     y_offset = 150
     level_rects = []  # List to store the clickable rectangles for each level
 
     for i, level in enumerate(levels):
         level_text = f"Level {i + 1} - Target Score: {level['target_score']}"
         top_score = scores.get(str(i), [])
-        if isinstance(top_score, list) and top_score:  # Ensure it's a non-empty list
-            top_score_display = top_score[0]  # The top score is the first element in the sorted list
+        if isinstance(top_score, list) and top_score:  # non-empty 
+            top_score_display = top_score[0]  # top score (sorted list)
         else:
-            top_score_display = "Not Played"  # Default if no scores exist
+            top_score_display = "Not Played"  # default 
 
         score_text = f"Best Score: {top_score_display}"
         color = (255, 255, 255) if selected_level == i else (180, 180, 180)
@@ -108,14 +107,14 @@ def draw_menu(selected_level=None):
 
 
     # Reset Scores button
-    reset_button_rect = pygame.Rect(20, screen_height - 50, 100, 30)  # Smaller button in bottom-left corner
+    reset_button_rect = pygame.Rect(20, screen_height - 50, 100, 30)  
     pygame.draw.rect(screen, (180, 50, 50), reset_button_rect)
     reset_text = exit_font.render("Reset Scores", True, (255, 255, 255))
     reset_text_rect = reset_text.get_rect(center=reset_button_rect.center)
     screen.blit(reset_text, reset_text_rect)
 
     pygame.display.flip()
-    return level_rects, reset_button_rect  # Return level option rects and reset button rect
+    return level_rects, reset_button_rect  
 
 def menu():
     """Handle the menu screen loop."""

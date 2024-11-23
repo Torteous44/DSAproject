@@ -1,3 +1,73 @@
+def greedy_cpu(matrix, origin, drain):
+    """
+    Simulates a CPU player finding a path from origin to drain using a greedy algorithm.
+    - origin: Tuple (row, col) of the starting position.
+    - drain: Tuple (row, col) of the target position.
+
+    Returns:
+    - A list of positions (row, col) representing the path, or None if no path exists.
+    """
+    rows, cols = len(matrix), len(matrix[0])  # Get the dimensions of the grid.
+    
+    # Define possible movement directions: up, down, left, right.
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    
+    # Start the CPU player at the origin position.
+    current = origin
+    path = []          # To store the path taken by the CPU.
+    visited = set()    # To keep track of already visited positions.
+
+    # Loop until the CPU reaches the target (drain).
+    while current != drain:
+        path.append(current)      # Add the current position to the path.
+        visited.add(current)      # Mark the current position as visited.
+
+        next_step = None  # Initialize the next move to None.
+
+        # Evaluate all possible moves from the current position.
+        for dr, dc in directions:
+            new_row, new_col = current[0] + dr, current[1] + dc  # Calculate the new position.
+
+            # Check if the new position is within the grid boundaries.
+            if 0 <= new_row < rows and 0 <= new_col < cols:
+                # Skip positions that are already visited or contain obstacles (-1).
+                if (new_row, new_col) not in visited and matrix[new_row][new_col] != -1:
+                    
+                    # If no next step is chosen yet, or this move brings the CPU closer to the drain:
+                    if not next_step or (
+                        abs(new_row - drain[0]) + abs(new_col - drain[1])
+                        < abs(next_step[0] - drain[0]) + abs(next_step[1] - drain[1])
+                    ):
+                        next_step = (new_row, new_col)  # Update the next step.
+
+        # If no valid move exists, return None (the CPU is stuck).
+        if next_step is None:
+            return None
+
+        # Move the CPU to the next chosen position.
+        current = next_step
+
+    # Once the drain is reached, add it to the path and return the complete path.
+    path.append(drain)
+    return path
+
+""" Explination of Distance Calculation:
+The abs() function is used in this context to calculate the absolute difference between the current position and the drain's coordinates along the rows and columns.
+This gives the "Manhattan Distance" between the two points without explicitly referring to it as such.
+
+The distance is calculated as:
+distance=∣new_row−drain[0]∣+∣new_col−drain[1]∣
+This measures how far the new position is from the drain in terms of row and column steps.
+
+Purpose in the greedy algorithm:
+-The greedy algorithm chooses the next step based on which potential move brings the current position closer to the drain.
+-By using abs(), you get the magnitude of the difference, ignoring whether the movement is in the positive or negative direction,
+since we are only interested in how "close" the points are, not the direction.
+-Without abs(), negative differences (like -1 or -2) could interfere with the comparison logic since negative numbers are 
+smaller in mathematical terms but irrelevant here.
+"""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# OTHER ALGORITHMS CURRENTLY NOT IN USE:
 # Updated water logic for dfs to include obstacles:
 def water_path_dfs(matrix: List[List[Stack]], origin: Tuple[int, int], drain: Tuple[int, int]) -> List[Tuple[int, int]]:
     """Simulate water flow from origin to drain using DFS, considering obstacles. Returns path if reachable, else empty list."""

@@ -30,8 +30,8 @@ def greedy_cpu(matrix, origin, drain):
 
             # Check if the new position is within the grid boundaries.
             if 0 <= new_row < rows and 0 <= new_col < cols:
-                # Skip positions that are already visited or contain obstacles (-1).
-                if (new_row, new_col) not in visited and matrix[new_row][new_col] != -1:
+                # Skip positions that are already visited.
+                if (new_row, new_col) not in visited:
                     
                     # If no next step is chosen yet, or this move brings the CPU closer to the drain:
                     if not next_step or (

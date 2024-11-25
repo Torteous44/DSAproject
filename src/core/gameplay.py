@@ -50,8 +50,14 @@ def play_level(level_index):
                                 return "retry"  
                             elif choice == "menu":
                                 return "menu"  
+                            
+                        else:
+                            print("Score too low. Resetting terrain and score.")
+                            terrain = initialize_terrain(level_data["terrain"]) 
+                            score_tracker = GameScore(optimal_path_length)
                     else:
                         print("Path did not reach drain, try again.")
+
 
                 elif y < screen_height - 50:  # click within grid area
                     row, col = y // cell_size, x // cell_size

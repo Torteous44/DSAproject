@@ -78,7 +78,7 @@ These are the most important files used for our game:
   - end_of_level.py: Handles the end of level display when the player completes the level.
   - score_manager.py: Calculates the score of the player and sorts them using the merge sort algorithm.
 3) **tests.py**:
-**This file is used to store coded to be tested for our game.**
+**This file is used to store code and features to be tested for our game.**
   
   
   

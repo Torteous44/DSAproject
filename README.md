@@ -58,8 +58,8 @@ python main.py
 ### **File Breakdown**
 1) **"assets" File**:
 **The assests file contains all the different assets we used in our game**,
-- images: Contains the images used for the drain and water faucet.
-- sounds: Contains the sound assets used to generate the different sounds in the levels. The sounds used were the water running and when you click on to change the height of the stack.
+- *"images" File*: Contains the images used for the drain and water faucet.
+- *"sounds" File*: Contains the sound assets used to generate the different sounds in the levels.
 2) **"src" File**:
 **The src file contains the main core file that determines the main functionality of the game, the utils file that handles the score calculation and menu screen.**
   

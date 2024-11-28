@@ -56,6 +56,8 @@ python main.py
 ---
 
 ### **File Breakdown**
+These are the most important files used for our game:
+
 1) **"assets" File**:
 **The assests file contains all the different assets we used in our game**,
 - *"images" File*: Contains the images used for the drain and water faucet.
@@ -74,7 +76,7 @@ python main.py
 
   *"utils" File*:
   - end_of_level.py: 
-  - score_manager.py: Calculates the score of the player and sorts them using the merge_sort algorithm.
+  - score_manager.py: Calculates the score of the player and sorts them using the merge sort algorithm.
   
   
   

@@ -4,6 +4,15 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 
 ---
 
+## Table of Contents
+- [Features](#Features)
+- [DFS Algorithm](#dfs-algorithm)
+- [Merge Sort Algorithm](#merge-sort-algorithm)
+- [Comparison of Algorithms](#comparison-of-algorithms)
+- [Conclusion](#conclusion)
+
+---
+
 ### **Features**
 1. Modify terrain heights using stacks.
 2. Simulate water flow in pseudo-3D.

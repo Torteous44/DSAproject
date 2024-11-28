@@ -109,7 +109,7 @@ The DFS (Depth First Search) algorithm is used to simulate water flow through th
 
 2. **Average Case**: \(O(V + E)\)
    - **Scenario**: The path involves several turns, and some backtracking is required.
-   - DFS explores parts of the terrain but prunes unnecessary branches.
+   - DFS explores parts of the terrain but eliminates unnecessary branches.
 
 3. **Worst Case**: \(O(V + E)\)
    - **Scenario**: The terrain has no direct path, requiring the algorithm to explore nearly the entire grid.

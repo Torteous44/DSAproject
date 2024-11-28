@@ -94,7 +94,7 @@ This file contains various code snippets and functions designed for testing diff
 
 ---
 
-## Complexity Analysis
+### Complexity Analysis
 
 This project implements various algorithms, including **DFS** for water flow simulation and **Merge Sort** for score management. Below is the complexity analysis for these algorithms in the context of our game's terrain generation and levels.
 

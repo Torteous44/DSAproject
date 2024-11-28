@@ -133,7 +133,7 @@ The Merge Sort algorithm is used to sort scores in descending order. It works by
 | Algorithm       | Best Case       | Average Case    | Worst Case      | Use Case                     |
 |------------------|-----------------|-----------------|-----------------|------------------------------|
 | **DFS**         | \(O(V)\)        | \(O(V + E)\)    | \(O(V + E)\)    | Water flow simulation        |
-| **Merge Sort**  | \(O(n \log n)\) | \(O(n \log n)\) | \(O(n \log n)\) | Sorting scores in descending |
+| **Merge Sort**  | \(O(n(log n)\) | \(O(n(log n)\) | \(O(n(log n)\) | Sorting scores in descending |
 
 ---
 

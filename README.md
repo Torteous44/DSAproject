@@ -65,7 +65,7 @@ These are the most important files used for our game:
 2) **"src" File**:
 **The src file contains the main core file that determines the main functionality of the game, the utils file that handles the score calculation and menu screen.**
   
-  *"core" File*:
+    *"core" File*:
   - audio.py: Contains the functions for playing the audio.
   - display.py: Handles how the game is displayed to the player.
   - gameplay.py: Handles how a specific level is played.
@@ -74,8 +74,8 @@ These are the most important files used for our game:
   - simulation.py: Contains the Depth First Search algorithm for the water logic.
   - terrain.py: Handles the generation of stacks and matrix that determines the terrain of the level.
 
-  *"utils" File*:
-  - end_of_level.py: 
+    *"utils" File*:
+  - end_of_level.py: Handles the end of level display when the player completes the level.
   - score_manager.py: Calculates the score of the player and sorts them using the merge sort algorithm.
   
   

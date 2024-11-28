@@ -56,13 +56,14 @@ python main.py
 ---
 
 ### **File Breakdown**
-1) assets file:
+1) **"assets" File**:
 **The assests file contains all the different assets we used in our game**,
 - images: Contains the images used for the drain and water faucet.
 - sounds: Contains the sound assets used to generate the different sounds in the levels. The sounds used were the water running and when you click on to change the height of the stack.
-2) src file:
+2) **"src" File**:
 **The src file contains the main core file that determines the main functionality of the game, the utils file that handles the score calculation and menu screen.**
-  1- **core file**:
+  
+  1- **"core" File**:
   - audio.py:
   - display.py:
   - gameplay.py:
@@ -70,7 +71,8 @@ python main.py
   - settings.py:
   - simulation.py: Contains the Depth First Search algorithm for the water logic.
   - terrain.py: Handles the generation of stacks and matrix that determines the terrain of the level.
-  2 - **utils file**:
+
+  2 - **"utils" File**:
   
   
   

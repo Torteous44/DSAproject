@@ -90,7 +90,7 @@ This folder contains the core game logic and utilities.
 - **score_manager.py**: Calculates and updates the player’s score, and sorts scores using the **Merge Sort** algorithm.
 
 #### 3. **tests.py**  
-This file contains various code snippets and functions designed for testing different features and mechanics of the game to ensure proper functionality.
+This file contains various code snippets and functions designed for testing different features and mechanics of the game.
 
 ---
 

@@ -1,3 +1,5 @@
+# OTHER ALGORITHMS NOT IN USE:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 def greedy_cpu(matrix, origin, drain):
     """
     Simulates a CPU player finding a path from origin to drain using a greedy algorithm.
@@ -66,8 +68,7 @@ since we are only interested in how "close" the points are, not the direction.
 -Without abs(), negative differences (like -1 or -2) could interfere with the comparison logic since negative numbers are 
 smaller in mathematical terms but irrelevant here.
 """
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# OTHER ALGORITHMS CURRENTLY NOT IN USE:
+
 # Updated water logic for dfs to include obstacles:
 def water_path_dfs(matrix: List[List[Stack]], origin: Tuple[int, int], drain: Tuple[int, int]) -> List[Tuple[int, int]]:
     """Simulate water flow from origin to drain using DFS, considering obstacles. Returns path if reachable, else empty list."""

@@ -59,11 +59,11 @@ python main.py
 These are the most important files used for our game:
 
 1) **"assets" File**:
-**The assests file contains all the different assets we used in our game**,
+**The "assests" file contains all the different assets we used in our game**,
 - *"images" File*: Contains the images used for the drain and water faucet.
 - *"sounds" File*: Contains the sound assets used to generate the different sounds in the levels.
 2) **"src" File**:
-**The src file contains the main "core" file that determines the main functionality of the game, the "utils" file that handles the score calculation and display of the scores.**
+**The "src" file contains the main "core" file that determines the main functionality of the game, the "utils" file that handles the score calculation and display of the scores.**
   
     *"core" File*:
   - audio.py: Contains the functions for playing the audio.

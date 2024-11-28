@@ -119,7 +119,7 @@ The DFS (Depth First Search) algorithm is used to simulate water flow through th
 - V = Number of cells in the grid (rows × columns).
 - E = Edges connecting the cells (up to 8 edges per cell for diagonals).
 
-**Merge Sort Algorithm:**
+### **Merge Sort Algorithm:**
 
 The Merge Sort algorithm is used to sort scores in descending order. It works by recursively dividing the input array into halves, sorting each half, and merging them back together.
 

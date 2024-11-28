@@ -117,7 +117,7 @@ The DFS (Depth First Search) algorithm is used to simulate water flow through th
 
 **Where:**
 - V = Number of cells in the grid (rows × columns).
-- E = Edges connecting the cells (up to 8 edges per cell for diagonals.
+- E = Edges connecting the cells (up to 8 edges per cell for diagonals).
 
 **Merge Sort Algorithm:**
 

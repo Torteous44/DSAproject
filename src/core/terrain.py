@@ -31,6 +31,9 @@ class Stack:
 
 def initialize_terrain(level_terrain):
     """Initialize terrain with stacks based on level data."""
+    # Time Complexity: O(R * C * H), where R is the number of rows, C is the number of columns,
+    # and H is the maximum height of any stack in the terrain. The time complexity comes from iterating through
+    # each cell in the terrain and pushing heights to the stack.
     rows, cols = len(level_terrain), len(level_terrain[0])
     terrain = [[Stack() for _ in range(cols)] for _ in range(rows)]
     
@@ -43,10 +46,15 @@ def initialize_terrain(level_terrain):
 
 def get_matrix_snapshot(terrain):
     """Return a 2D matrix of the current heights of each stack in the terrain."""
+    # Time Complexity: O(R * C), where R is the number of rows and C is the number of columns.
+    # We iterate through each cell in the terrain and call peek() on each stack (constant time for peek).
     return [[cell.peek() for cell in row] for row in terrain]
 
 def handle_click(row, col, terrain, score_tracker: GameScore):
     """Handle a left or right mouse click to modify terrain."""
+    # Time Complexity: O(1), as it involves a constant number of operations:
+    #    - peeking at the top of a stack (O(1)),
+    #    - pushing or popping a value from a stack (O(1)).
     stack = terrain[row][col]
     top_value = stack.peek()
 

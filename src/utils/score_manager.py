@@ -53,12 +53,16 @@ class GameScore:
 
     def add_modification(self):
         """Increment modifications and deduct points."""
+        # Time Complexity: O(1)
+        # This method only increments modifications and deducts points in constant time.
         self.modifications += 1
         self.score -= 5  # deduction for modification
         print(f"Modification made. Current score: {self.score}")
 
     def set_path_length(self, length):
         """Set the path length and calculate any penalty based on the optimal path."""
+        # Time Complexity: O(1)
+        # This method computes the penalty for extra steps by a simple arithmetic comparison and update, all of which are constant time operations.
         self.path_length = length
         if length > self.optimal_path_length: # when length exceeds optimal length
             extra_steps = length - self.optimal_path_length
@@ -69,12 +73,16 @@ class GameScore:
 
     def final_score(self):
         """Return the final score, ensuring it doesn’t go below zero."""
+        # Time Complexity: O(1)
+        # This method simply returns the final score in constant time after ensuring it doesn't go below zero.
         return max(self.score, 0)
 
 # Score Management Functions
 
 def load_scores():
     """Load scores from a file and ensure all levels have valid lists."""
+    # Time Complexity: O(L), where L is the number of levels.
+    # The function iterates over all levels to ensure each level has valid score entries. It loads the entire score data from the file and performs a check on each level.
     if os.path.exists(SCORES_FILE):
         with open(SCORES_FILE, "r") as file:
             try:
@@ -96,6 +104,8 @@ def load_scores():
 
 def reset_scores():
     """Reset all scores to the original state."""
+    # Time Complexity: O(L), where L is the number of levels.
+    # This function initializes a new score structure for all levels and writes it back to the file, iterating over all levels in the process.
     initial_scores = {str(i): [] for i in range(len(levels))}
     with open(SCORES_FILE, "w") as file:
         json.dump(initial_scores, file)
@@ -104,6 +114,8 @@ def reset_scores():
 
 def get_player_rank(level_index, score):
     """Calculate the rank of the player's score for a specific level."""
+    # Time Complexity: O(S), where S is the number of scores for the given level.
+    # This function iterates through the scores list of a particular level to calculate the rank of the player's score.
     scores = load_scores()
     level_key = str(level_index)
 
@@ -118,6 +130,8 @@ def get_player_rank(level_index, score):
 
 def merge_sort_descending(array):
     """Sorts an array in descending order using merge sort."""
+    # Time Complexity: O(N log N), where N is the size of the array.
+    # Merge Sort is a divide-and-conquer sorting algorithm that splits the array into smaller parts, sorts them, and merges them back. The time complexity is logarithmic with respect to the size of the array.
     if len(array) <= 1:
         return array  
 
@@ -131,6 +145,8 @@ def merge_sort_descending(array):
 
 def merge_descending(left, right):
     """Merge two sorted arrays in descending order."""
+    # Time Complexity: O(N), where N is the total number of elements in the two arrays.
+    # This function iterates through both sorted arrays and merges them into a single sorted array. The operation takes linear time with respect to the total number of elements.
     result = []
     while left and right:
         if left[0] >= right[0]:  # compare elements for descending order
@@ -146,6 +162,8 @@ def merge_descending(left, right):
 
 def save_score(level_index, score):
     """Save the player's score for a specific level."""
+    # Time Complexity: O(S log S), where S is the number of scores for the level.
+    # This function loads the scores, appends the new score, sorts the scores list using merge sort (O(S log S) time), and writes the updated scores back to the file.
     scores = load_scores()  
 
     level_key = str(level_index) 
@@ -165,6 +183,8 @@ def save_score(level_index, score):
 
 def validate_scores(scores):
     """Ensure all scores in the file are lists."""
+    # Time Complexity: O(L), where L is the number of levels.
+    # This function iterates through all levels and ensures that the scores for each level are stored as lists, correcting any invalid entries.
     for i in range(len(levels)):
         level_key = str(i)
         if not isinstance(scores.get(level_key), list):

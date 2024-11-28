@@ -18,16 +18,20 @@ exit_font = pygame.font.Font(None, 15)
 
 # ___________INTRO SCREEN STUFF____________
 
+
+# O(1) - Drawing the introductory screen involves rendering a fixed number of text and shapes.
 def draw_intro():
     """Draw the introductory screen."""
     screen.fill((30, 30, 30))  # Background color for the intro screen
 
     # Title
+    # O(1) - Rendering the title text.
     title_text = title_font.render("Welcome to WaterRouter", True, (255, 255, 255))
     title_rect = title_text.get_rect(center=(screen_width // 2, 100))
     screen.blit(title_text, title_rect)
 
     # Introductory text
+    # O(1) per line - Rendering a fixed number of introductory text lines.
     intro_lines = [
         "Guide the water from the faucet to the drain.",
         "Adjust the terrain to ensure the water flows smoothly.",
@@ -42,6 +46,7 @@ def draw_intro():
         y_offset += 30
 
     # Play button
+    # O(1) - Drawing the play button involves fixed operations.
     play_button_rect = pygame.Rect(screen_width // 2 - 100, screen_height // 2 + 50, 200, 50)
     pygame.draw.rect(screen, (50, 150, 50), play_button_rect)
     play_text = button_font.render("Play Game", True, (255, 255, 255))
@@ -51,6 +56,7 @@ def draw_intro():
     pygame.display.flip()  
     return play_button_rect
 
+# O(1) per frame - Handles the loop for the introductory screen.
 def intro_screen():
     """Handle the intro screen loop."""
     running = True
@@ -68,15 +74,18 @@ def intro_screen():
 
 #____________MENU SCREEN STUFF_____________
 
+# O(n) - Where n is the number of levels (for rendering and loading scores).
 def draw_menu(selected_level=None):
     screen.fill((50, 50, 50))  # background color 
 
     # Title
+    # O(1) - Render the menu title
     title_text = title_font.render("Select Level", True, (255, 255, 255))
     title_rect = title_text.get_rect(center=(screen_width // 2, 50))
     screen.blit(title_text, title_rect)
 
     # Level options
+    # O(n) - Iterates through all levels to render options and scores.
     scores = load_scores()  
     y_offset = 150
     level_rects = []  # List to store the clickable rectangles for each level
@@ -116,12 +125,14 @@ def draw_menu(selected_level=None):
     pygame.display.flip()
     return level_rects, reset_button_rect  
 
+# O(n + e) per frame - Handles menu events and level selection.
 def menu():
     """Handle the menu screen loop."""
     selected_level = None
     running = True
 
     while running:
+        # O(n) - Draw menu options and reset button.
         level_rects, reset_button_rect = draw_menu(selected_level)  # Draw menu and get clickable areas
 
         for event in pygame.event.get():

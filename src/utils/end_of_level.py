@@ -15,6 +15,9 @@ button_font = pygame.font.Font(None, 30)
 
 def draw_end_of_level_screen(level_index, final_score):
     """Display the end-of-level screen with leaderboard and options."""
+    # Time Complexity: O(S), where S is the number of scores in the leaderboard for the level.
+    # The function iterates through the leaderboard scores and renders them.
+    # In the worst case, this function will process all scores for the level.
     screen.fill((30, 30, 30))  # Background color
 
     # Title
@@ -69,6 +72,8 @@ def draw_end_of_level_screen(level_index, final_score):
 
 def end_of_level(level_index, final_score):
     """Handle the end-of-level screen logic."""
+    # Time Complexity: O(1), as it processes each event in a loop, checking for button clicks (constant time operations).
+    # The logic for handling button clicks is direct and doesn't scale with the number of elements.
     running = True
     while running:
         retry_button_rect, menu_button_rect = draw_end_of_level_screen(level_index, final_score)

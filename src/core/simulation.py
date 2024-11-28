@@ -8,6 +8,8 @@ from src.core.terrain import get_matrix_snapshot
 
 def water_path_dfs(matrix: List[List[int]], origin: Tuple[int, int], drain: Tuple[int, int]) -> List[Tuple[int, int]]:
     """Simulate water flow from origin to drain using DFS. Returns path if reachable, else empty list."""
+    # Time Complexity: O(V + E), where V is the number of cells (rows * cols) and E is the number of edges between cells.
+    # Each cell is visited once, and up to 8 neighbors are checked for each cell.
     rows, cols = len(matrix), len(matrix[0])
     path = []
     visited = set()
@@ -37,6 +39,8 @@ def water_path_dfs(matrix: List[List[int]], origin: Tuple[int, int], drain: Tupl
 
 def run_simulation(terrain, origin: Tuple[int, int], drain: Tuple[int, int], score_tracker) -> int:
     """Run the water path simulation and return path length if completed, else None."""
+    # Time Complexity: O(V + E), where V and E are determined by the terrain matrix's size and connectivity.
+    # `get_matrix_snapshot` is assumed to be O(rows * cols), and `show_water_path` has a time complexity dependent on the length of the path.
     matrix = get_matrix_snapshot(terrain)  # 2D list of heights
 
     path = water_path_dfs(matrix, origin, drain)

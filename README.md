@@ -17,7 +17,7 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 ### **Installation and Setup**
 
 #### **1. Clone the Repository**
-Open a terminal or command prompt and run the following command to clone the repository (Note: Clone the "main" branch of the repository):
+Open a terminal or command prompt and run the following command to clone the repository:
 ```bash
 git clone https://github.com/<your-github-username>/WaterRouter.git
 cd WaterRouter
@@ -52,4 +52,27 @@ python main.py
 - **Right-click:** Decrease terrain height.
 - **Run Button:** Simulate water flow.
 - Press **Esc** to return to the menu.
+
+---
+
+### **File Breakdown**
+1) assets file:
+**The assests file contains all the different assets we used in our game**,
+- images: Contains the images used for the drain and water faucet.
+- sounds: Contains the sound assets used to generate the different sounds in the levels. The sounds used were the water running and when you click on to change the height of the stack.
+2) src file:
+**The src file contains the main core file that determines the main functionality of the game, the utils file that handles the score calculation and menu screen.**
+  1- **core file**:
+  - audio.py:
+  - display.py:
+  - gameplay.py:
+  - menu.py:
+  - settings.py:
+  - simulation.py: Contains the Depth First Search algorithm for the water logic.
+  - terrain.py: Handles the generation of stacks and matrix that determines the terrain of the level.
+  2 - **utils file**:
+  
+  
+  
+
 

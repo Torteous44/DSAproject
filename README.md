@@ -63,7 +63,7 @@ These are the most important files used for our game:
 - *"images" File*: Contains the images used for the drain and water faucet.
 - *"sounds" File*: Contains the sound assets used to generate the different sounds in the levels.
 2) **"src" File**:
-**The src file contains the main core file that determines the main functionality of the game, the utils file that handles the score calculation and menu screen.**
+**The src file contains the main "core" file that determines the main functionality of the game, the "utils" file that handles the score calculation and display of the scores.**
   
     *"core" File*:
   - audio.py: Contains the functions for playing the audio.
@@ -78,7 +78,7 @@ These are the most important files used for our game:
   - end_of_level.py: Handles the end of level display when the player completes the level.
   - score_manager.py: Calculates the score of the player and sorts them using the merge sort algorithm.
 3) **tests.py**:
-This file is used to store coded to be tested for our game.
+**This file is used to store coded to be tested for our game.**
   
   
   

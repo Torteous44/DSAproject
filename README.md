@@ -165,7 +165,7 @@ The Merge Sort algorithm is used to sort scores in descending order. It works by
 
 ### *Note*:
 
-*Additional documentation  for functions all other functions used and their complexity analysis, including GUI functions, are commented above the function themselves.*
+*Additional documentation  for all other functions used and their complexity analysis, including GUI functions, are commented above the function themselves.*
 
 
 

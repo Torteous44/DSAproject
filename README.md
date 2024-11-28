@@ -76,7 +76,7 @@ Contains all the media resources used in the game:
 #### 2. **`src` Directory**  
 This folder contains the core game logic and utilities.
 
-**Core Files:**
+**Core Files (`core`):**
 - **audio.py**: Manages the playback of sound effects during gameplay.
 - **display.py**: Handles the graphical rendering of the game, including the grid and visual elements.
 - **gameplay.py**: Contains the logic for playing a specific level, including terrain manipulation and water flow simulation.
@@ -85,7 +85,7 @@ This folder contains the core game logic and utilities.
 - **simulation.py**: Implements the **Depth First Search (DFS)** algorithm to simulate water flow across the grid.
 - **terrain.py**: Handles the generation of the terrain matrix, including stack heights that define the landscape for each level.
 
-**Utility Files:**
+**Utility Files (`utils`):**
 - **end_of_level.py**: Manages the end-of-level screen and displays the results when a player completes a level.
 - **score_manager.py**: Calculates and updates the player’s score, and sorts scores using the **Merge Sort** algorithm.
 

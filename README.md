@@ -63,7 +63,7 @@ python main.py
 2) **"src" File**:
 **The src file contains the main core file that determines the main functionality of the game, the utils file that handles the score calculation and menu screen.**
   
-  1- **"core" File**:
+  *"core" File*:
   - audio.py:
   - display.py:
   - gameplay.py:
@@ -72,7 +72,9 @@ python main.py
   - simulation.py: Contains the Depth First Search algorithm for the water logic.
   - terrain.py: Handles the generation of stacks and matrix that determines the terrain of the level.
 
-  2 - **"utils" File**:
+  *"utils" File*:
+  - end_of_level.py: 
+  - score_manager.py: Calculates the score of the player and sorts them using the merge_sort algorithm.
   
   
   

@@ -23,12 +23,10 @@ def water_path_dfs(matrix: List[List[int]], origin: Tuple[int, int], drain: Tupl
         visited.add((row, col))
         path.append((row, col))
 
-        # stop if we reach the drain
         if (row, col) == drain:
             print(path)
             return path
 
-        # explore neighbors
         for dr, dc in directions:
             newRow, newCol = row + dr, col + dc
             if 0 <= newRow < rows and 0 <= newCol < cols:

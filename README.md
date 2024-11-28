@@ -65,29 +65,32 @@ python main.py
 ---
 
 ### **File Breakdown**
-These are the most important files used for our game:
 
-1) **"assets" File**:
-**The "assests" file contains all the different assets we used in our game**,
-- *"images" File*: Contains the images used for the drain and water faucet.
-- *"sounds" File*: Contains the sound assets used to generate the different sounds in the levels.
-2) **"src" File**:
-**The "src" file contains the main "core" file that determines the main functionality of the game, the "utils" file that handles the score calculation and display of the scores.**
-  
-    *"core" File*:
-  - audio.py: Contains the functions for playing the audio.
-  - display.py: Handles how the game is displayed to the player.
-  - gameplay.py: Handles how a specific level is played.
-  - menu.py: Generates the menu screen.
-  - settings.py: Handles the level settings.
-  - simulation.py: Contains the Depth First Search algorithm for the water logic.
-  - terrain.py: Handles the generation of stacks and matrix that determines the terrain of the level.
+Below is an overview of the key files and their respective roles in the game:
 
-    *"utils" File*:
-  - end_of_level.py: Handles the end of level display when the player completes the level.
-  - score_manager.py: Calculates the score of the player and sorts them using the merge sort algorithm.
-3) **tests.py**:
-**This file is used to store code and features to be tested for our game.**
+#### 1. **Assets Directory**  
+Contains all the media resources used in the game:
+- **"images" Folder**: Stores the images for the game, including the drain and water faucet visuals.
+- **"sounds" Folder**: Holds sound files for in-game audio effects.
+
+#### 2. **src Directory**  
+This folder contains the core game logic and utilities.
+
+**Core Files:**
+- **audio.py**: Manages the playback of sound effects during gameplay.
+- **display.py**: Handles the graphical rendering of the game, including the grid and visual elements.
+- **gameplay.py**: Contains the logic for playing a specific level, including terrain manipulation and water flow simulation.
+- **menu.py**: Responsible for generating and managing the main menu screen.
+- **settings.py**: Defines the game settings such as screen size, level configurations, and terrain layout.
+- **simulation.py**: Implements the **Depth First Search (DFS)** algorithm to simulate water flow across the grid.
+- **terrain.py**: Handles the generation of the terrain matrix, including stack heights that define the landscape for each level.
+
+**Utility Files:**
+- **end_of_level.py**: Manages the end-of-level screen and displays the results when a player completes a level.
+- **score_manager.py**: Calculates and updates the player’s score, and sorts scores using the **Merge Sort** algorithm.
+
+#### 3. **tests.py**  
+This file contains various code snippets and functions designed for testing different features and mechanics of the game to ensure proper functionality.
 
 ---
 

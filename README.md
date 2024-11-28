@@ -6,10 +6,10 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 
 ## Table of Contents
 - [Features](#Features)
-- [DFS Algorithm](#dfs-algorithm)
-- [Merge Sort Algorithm](#merge-sort-algorithm)
-- [Comparison of Algorithms](#comparison-of-algorithms)
-- [Conclusion](#conclusion)
+- [Installation and Setup](#installation_and_setup)
+- [Game Controls](#game_controls)
+- [File Breakdown](#file_breakdown)
+- [Complexity Analysis](#complexity_analysis)
 
 ---
 

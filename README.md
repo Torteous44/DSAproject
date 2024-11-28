@@ -125,7 +125,7 @@ The Merge Sort algorithm is used to sort scores in descending order. It works by
    - Merge Sort's performance remains unaffected by the input's order.
 
 **Where:**
-- \(n = \text{number of scores to be sorted}\).
+- n = number of scores to be sorted.
 
 
 ### **Comparison of Algorithms**

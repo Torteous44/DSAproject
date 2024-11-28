@@ -82,15 +82,15 @@ These are the most important files used for our game:
 
 ---
 
-# Complexity Analysis
+## Complexity Analysis
 
 This project implements various algorithms, including **DFS** for water flow simulation and **Merge Sort** for score management. Below is the complexity analysis for these algorithms in the context of our game's terrain generation and levels.
 
-## **DFS Algorithm**
+### **DFS Algorithm**
 
 The DFS (Depth First Search) algorithm is used to simulate water flow through the terrain. The terrain is represented as a 3D grid of stacks, with each stack having a height. The algorithm explores all possible directions (up, down, left, right, and diagonals) to find a path from the origin to the drain.
 
-### **Time Complexity**
+**Time Complexity**
 1. **Best Case**: \(O(V)\)
    - **Scenario**: The path from the origin to the drain is direct (no height mismatches).
    - The algorithm finds the solution with minimal exploration.
@@ -107,11 +107,11 @@ The DFS (Depth First Search) algorithm is used to simulate water flow through th
 - \(V = \text{number of cells in the grid (rows × columns)}\).
 - \(E = \text{edges connecting the cells (up to 8 edges per cell for diagonals)}\).
 
-## **Merge Sort Algorithm**
+**Merge Sort Algorithm**
 
 The Merge Sort algorithm is used to sort scores in descending order. It works by recursively dividing the input array into halves, sorting each half, and merging them back together.
 
-### **Time Complexity**
+**Time Complexity**
 1. **Best Case**: \(O(n \log n)\)
    - **Scenario**: Scores are already sorted in descending order.
    - Even in the best case, merge sort divides the array and performs comparisons during merging.
@@ -128,7 +128,7 @@ The Merge Sort algorithm is used to sort scores in descending order. It works by
 - \(n = \text{number of scores to be sorted}\).
 
 
-## **Comparison of Algorithms**
+### **Comparison of Algorithms**
 
 | Algorithm       | Best Case       | Average Case    | Worst Case      | Use Case                     |
 |------------------|-----------------|-----------------|-----------------|------------------------------|

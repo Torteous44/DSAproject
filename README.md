@@ -17,7 +17,7 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 ### **Installation and Setup**
 
 #### **1. Clone the Repository**
-Open a terminal or command prompt and run the following command to clone the repository. Note: Clone the "main" branch of the repository:
+Open a terminal or command prompt and run the following command to clone the repository (Note: Clone the "main" branch of the repository):
 ```bash
 git clone https://github.com/<your-github-username>/WaterRouter.git
 cd WaterRouter

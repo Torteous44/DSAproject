@@ -79,6 +79,66 @@ These are the most important files used for our game:
   - score_manager.py: Calculates the score of the player and sorts them using the merge sort algorithm.
 3) **tests.py**:
 **This file is used to store code and features to be tested for our game.**
+
+---
+
+# Complexity Analysis
+
+This project implements various algorithms, including **DFS** for water flow simulation and **Merge Sort** for score management. Below is the complexity analysis for these algorithms in the context of our game's terrain generation and levels.
+
+## **DFS Algorithm**
+
+The DFS (Depth First Search) algorithm is used to simulate water flow through the terrain. The terrain is represented as a 3D grid of stacks, with each stack having a height. The algorithm explores all possible directions (up, down, left, right, and diagonals) to find a path from the origin to the drain.
+
+### **Time Complexity**
+1. **Best Case**: \(O(V)\)
+   - **Scenario**: The path from the origin to the drain is direct (no height mismatches).
+   - The algorithm finds the solution with minimal exploration.
+
+2. **Average Case**: \(O(V + E)\)
+   - **Scenario**: The path involves several turns, and some backtracking is required.
+   - DFS explores parts of the terrain but prunes unnecessary branches.
+
+3. **Worst Case**: \(O(V + E)\)
+   - **Scenario**: The terrain has no direct path, requiring the algorithm to explore nearly the entire grid.
+   - The algorithm explores most paths due to backtracking.
+
+**Where:**
+- \(V = \text{number of cells in the grid (rows × columns)}\).
+- \(E = \text{edges connecting the cells (up to 8 edges per cell for diagonals)}\).
+
+## **Merge Sort Algorithm**
+
+The Merge Sort algorithm is used to sort scores in descending order. It works by recursively dividing the input array into halves, sorting each half, and merging them back together.
+
+### **Time Complexity**
+1. **Best Case**: \(O(n \log n)\)
+   - **Scenario**: Scores are already sorted in descending order.
+   - Even in the best case, merge sort divides the array and performs comparisons during merging.
+
+2. **Average Case**: \(O(n \log n)\)
+   - **Scenario**: Scores are in random order.
+   - The algorithm performs consistent comparisons and merges at all levels of recursion.
+
+3. **Worst Case**: \(O(n \log n)\)
+   - **Scenario**: Scores are sorted in ascending order (reverse of desired order).
+   - Merge Sort's performance remains unaffected by the input's order.
+
+**Where:**
+- \(n = \text{number of scores to be sorted}\).
+
+
+## **Comparison of Algorithms**
+
+| Algorithm       | Best Case       | Average Case    | Worst Case      | Use Case                     |
+|------------------|-----------------|-----------------|-----------------|------------------------------|
+| **DFS**         | \(O(V)\)        | \(O(V + E)\)    | \(O(V + E)\)    | Water flow simulation        |
+| **Merge Sort**  | \(O(n \log n)\) | \(O(n \log n)\) | \(O(n \log n)\) | Sorting scores in descending |
+
+---
+
+
+
   
   
   

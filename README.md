@@ -54,13 +54,11 @@ python main.py
 #### **Menu Screen**
 - Click a level to begin.
 - Click **Reset Scores** (bottom-left) to reset all high scores.
-- Press **Q** to quit the game.
 
 #### **Gameplay**
 - **Left-click:** Increase terrain height.
 - **Right-click:** Decrease terrain height.
 - **Run Button:** Simulate water flow.
-- Press **Esc** to return to the menu.
 
 ---
 

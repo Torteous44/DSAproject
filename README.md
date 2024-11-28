@@ -68,7 +68,7 @@ python main.py
 
 Below is an overview of the key files and their respective roles in the game:
 
-#### 1. **Assets Directory**  
+#### 1. **assets Directory**  
 Contains all the media resources used in the game:
 - **"images" Folder**: Stores the images for the game, including the drain and water faucet visuals.
 - **"sounds" Folder**: Holds sound files for in-game audio effects.

@@ -6,10 +6,10 @@ Welcome to **WaterRouter**, a terrain-modifying puzzle game where you guide wate
 
 ## Table of Contents
 - [Features](#Features)
-- [Installation and Setup](#Installation_and_Setup)
-- [Game Controls](#Game_Controls)
-- [File Breakdown](#File_Breakdown)
-- [Complexity Analysis](#Complexity_Analysis)
+- [Installation and Setup](#Installation-and-Setup)
+- [Game Controls](#Game-Controls)
+- [File Breakdown](#File-Breakdown)
+- [Complexity Analysis](#Complexity-Analysis)
 
 ---
 

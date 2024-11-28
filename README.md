@@ -112,15 +112,15 @@ The DFS (Depth First Search) algorithm is used to simulate water flow through th
 The Merge Sort algorithm is used to sort scores in descending order. It works by recursively dividing the input array into halves, sorting each half, and merging them back together.
 
 **Time Complexity**
-1. **Best Case**: \(O(n \log n)\)
+1. **Best Case**: \(O(n(log n)\)
    - **Scenario**: Scores are already sorted in descending order.
    - Even in the best case, merge sort divides the array and performs comparisons during merging.
 
-2. **Average Case**: \(O(n \log n)\)
+2. **Average Case**: \(O(n(log n)\)
    - **Scenario**: Scores are in random order.
    - The algorithm performs consistent comparisons and merges at all levels of recursion.
 
-3. **Worst Case**: \(O(n \log n)\)
+3. **Worst Case**: \(O(n(log n)\)
    - **Scenario**: Scores are sorted in ascending order (reverse of desired order).
    - Merge Sort's performance remains unaffected by the input's order.
 
